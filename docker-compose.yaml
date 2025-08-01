@@ -1,0 +1,10 @@
+services:
+  app:
+    env_file: ".env"
+    image: pytellum:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./private.key:/app/private.key
+    command: ["python", "main.py", "get-tokens"]

@@ -1,0 +1,35 @@
+[project]
+name = "pytellum"
+version = "0.1.0"
+description = "Python Intellum Access Token generator and library"
+readme = "README.md"
+authors = [
+  {name = "Michael Rose", email = "michael@michaelrosejr.com"}
+  ]
+license = "GPL-3.0-or-later"
+requires-python = ">=3.11"
+dependencies = [
+    "colorlog>=6.9.0",
+    "cyclopts>=3.22.3",
+    "pyjwt[crypto]>=2.10.1",
+    "python-dotenv>=1.1.1",
+    "pytz>=2025.2",
+    "requests>=2.32.4",
+    "rich>=14.0.0",
+    "ruff>=0.12.4",
+]
+
+[tool.ruff]
+line-length = 120
+[tool.ruff.lint]
+select = ["E", "F", "W", "Q", "I"]
+
+[project.scripts]
+intel = "pytellum.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pytellum"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
